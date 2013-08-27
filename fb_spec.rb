@@ -6,18 +6,23 @@ describe Fizzling, "FizzBuzzTest" do
 	end
 
 	it "should test if number is divisible by 3 and 5" do
-		i = 15
-		@fb.fizz(i).should == "FizzBuzz"
+		@fb.fizz(15).should == "FizzBuzz"
 	end
 
 	it "should test if number is divisible by 3" do
-		i = 3
-		@fb.fizz(i).should == "Fizz"
+		@fb.fizz(3).should == "Fizz"
 	end
-
 
 	it "should test if number is divisible by 5" do
-		i = 5
-		@fb.fizz(i).should == "Buzz"
+		@fb.fizz(5).should == "Buzz"
 	end
+
+	it "should test that a number not divisible by 3 or 5 returns a number" do
+		@fb.fizz(7).class.should == Fixnum
+	end
+
+	it "should test that a number not divisible by 3 or 5 returns correct number" do
+		@fb.fizz(7).should == 7
+	end
+
 end
